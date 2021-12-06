@@ -78,6 +78,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/axiom/config/permissions/org.axiom.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.axiom.android.xml
 
+# Pixel sysconfig from Pixel XL (Photos)
+PRODUCT_COPY_FILES += \
+		vendor/axiom/prebuilt/common/etc/sysconfig/pixel_2016_exclusive.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_2016_exclusive.xml \
+
 # Enable gestural navigation overlay to match default navigation mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
