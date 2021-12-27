@@ -182,9 +182,8 @@ PRODUCT_PACKAGES += \
 		Launcher3Overlay
 
 
-# Translations
-#PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crowdin/overlay
-#PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
+$(call inherit-product, vendor/axiom/config/sepolicy.mk)
+
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/axiom/build/target/product/security/axiom
