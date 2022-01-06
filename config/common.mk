@@ -74,6 +74,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/axiom/config/permissions/org.axiom.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.axiom.android.xml
 
+# Enable gestural navigation overlay to match default navigation mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
+
 # Log privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=log
