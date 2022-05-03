@@ -74,9 +74,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/axiom/config/permissions/org.axiom.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.axiom.android.xml
 
-# Enforce privapp-permissions whitelist
+# Log privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.control_privapp_permissions=enforce
+    ro.control_privapp_permissions=log
 
 
 # Include Axiom audio files
