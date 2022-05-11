@@ -178,7 +178,7 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
-# Dex preopt
+# SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
@@ -189,6 +189,8 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
 		Launcher3Overlay
 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+		dalvik.vm.systemuicompilerfilter=speed
 
 $(call inherit-product, vendor/axiom/config/sepolicy.mk)
 
