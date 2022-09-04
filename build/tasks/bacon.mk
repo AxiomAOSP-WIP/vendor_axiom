@@ -27,10 +27,9 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(AXIOM_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(AXIOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(AXIOM_TARGET_PACKAGE).sha256sum
 	@echo -e "==================================="
-  @echo -e "			 /\   . _  _ _ /~\(~         "
-	@echo -e "			/~~\><|(_)| | |\_/_)         "
-	@echo -e "==================================="
-	@echo -e "Package details"
+	@echo -e "Build AxiomOS Tesla finished ;-)"
+	@echo -e "Package details:"
 	@echo -e "Package: $(AXIOM_TARGET_PACKAGE)"
+	@echo -e "Axiom Version: $(AXIOM_VERSION)"
 	@echo "Size: `du -sh $(AXIOM_TARGET_PACKAGE) | awk '{print $$1}' `"
 	@echo -e "Checksum: `cat $(AXIOM_TARGET_PACKAGE).sha256sum | awk '{ print $$1 }'`"
