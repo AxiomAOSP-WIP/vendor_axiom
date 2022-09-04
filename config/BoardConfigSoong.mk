@@ -44,8 +44,12 @@ SOONG_CONFIG_axiomNvidiaVars += \
 
 SOONG_CONFIG_NAMESPACES += axiomQcomVars
 SOONG_CONFIG_axiomQcomVars += \
-    supports_extended_compress_format \
-    uses_pre_uplink_features_netmgrd
+		legacy_hw_disk_encryption \
+		should_wait_for_qsee \
+		supports_extended_compress_format \
+		supports_hw_fde \
+		supports_hw_fde_perf \
+		uses_pre_uplink_features_netmgrd
 
 # Only create display_headers_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
 ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
@@ -57,7 +61,11 @@ endif
 SOONG_CONFIG_axiomGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
 SOONG_CONFIG_axiomGlobalVars_uses_egl_display_array := $(TARGET_USES_EGL_DISPLAY_ARRAY)
 SOONG_CONFIG_axiomNvidiaVars_uses_nvidia_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
+SOONG_CONFIG_axiomQcomVars_legacy_hw_disk_encryption := $(TARGET_LEGACY_HW_DISK_ENCRYPTION)
+SOONG_CONFIG_axiomQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
 SOONG_CONFIG_axiomQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
+SOONG_CONFIG_axiomQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
+SOONG_CONFIG_axiomQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
 SOONG_CONFIG_axiomQcomVars_uses_pre_uplink_features_netmgrd := $(TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD)
 
 # Set default values

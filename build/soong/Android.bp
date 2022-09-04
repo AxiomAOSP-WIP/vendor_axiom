@@ -50,6 +50,26 @@ cc_library_headers {
     recovery_available: true,
 }
 
+soong_config_module_type {
+    name: "camera_needs_client_info_lib",
+    module_type: "cc_defaults",
+    config_namespace: "tequilaGlobalVars",
+    bool_variables: ["camera_needs_client_info_lib"],
+    properties: [
+        "cppflags",
+        "shared_libs",
+    ],
+}
+camera_needs_client_info_lib {
+    name: "camera_needs_client_info_lib_defaults",
+    soong_config_variables: {
+        camera_needs_client_info_lib: {
+            cppflags: ["-DCAMERA_NEEDS_CLIENT_INFO_LIB"],
+            shared_libs: ["vendor.oneplus.hardware.camera@1.0"],
+        },
+    },
+}
+
 // Target platform agnostic config modules
 soong_config_module_type {
     name: "gralloc_10_usage_bits",
@@ -221,6 +241,23 @@ librmnetctl_pre_uplink {
 }
 
 soong_config_module_type {
+    name: "legacy_hw_disk_encryption",
+    module_type: "cc_defaults",
+    config_namespace: "axiomQcomVars",
+    bool_variables: ["legacy_hw_disk_encryption"],
+    properties: ["cppflags"],
+}
+
+legacy_hw_disk_encryption {
+    name: "legacy_hw_disk_encryption_defaults",
+    soong_config_variables: {
+        legacy_hw_disk_encryption: {
+            cppflags: ["-DLEGACY_HW_DISK_ENCRYPTION"],
+        },
+    },
+}
+
+soong_config_module_type {
     name: "extended_compress_format",
     module_type: "cc_defaults",
     config_namespace: "axiomQcomVars",
@@ -236,6 +273,72 @@ extended_compress_format {
         },
     },
 }
+
+
+
+soong_config_module_type {
+    name: "qti_cryptfshw_qsee",
+    module_type: "cc_defaults",
+    config_namespace: "axiomQcomVars",
+    bool_variables: ["should_wait_for_qsee"],
+    properties: ["cflags"],
+}
+
+qti_cryptfshw_qsee {
+    name: "qti_cryptfshw_qsee_defaults",
+    soong_config_variables: {
+        should_wait_for_qsee: {
+            cflags: ["-DWAIT_FOR_QSEE"],
+        },
+    },
+}
+
+
+soong_config_module_type {
+    name: "vold_hw_fde",
+    module_type: "cc_defaults",
+    config_namespace: "axiomQcomVars",
+    bool_variables: ["supports_hw_fde"],
+    properties: [
+        "cflags",
+        "header_libs",
+        "shared_libs",
+    ],
+}
+
+vold_hw_fde {
+    name: "vold_hw_fde_defaults",
+    soong_config_variables: {
+        supports_hw_fde: {
+            cflags: ["-DCONFIG_HW_DISK_ENCRYPTION"],
+            header_libs: ["libcryptfs_hw_headers"],
+            shared_libs: ["libcryptfs_hw"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "vold_hw_fde_perf",
+    module_type: "cc_defaults",
+    config_namespace: "axiomQcomVars",
+    bool_variables: ["supports_hw_fde_perf"],
+    properties: [
+        "cflags",
+        "shared_libs",
+    ],
+}
+
+vold_hw_fde_perf {
+    name: "vold_hw_fde_perf_defaults",
+    soong_config_variables: {
+        supports_hw_fde_perf: {
+            cflags: ["-DCONFIG_HW_DISK_ENCRYPT_PERF"],
+            shared_libs: ["libcryptfs_hw"],
+        },
+    },
+}
+
+
 
 soong_config_module_type {
     name: "surfaceflinger_qcom_extensions",
