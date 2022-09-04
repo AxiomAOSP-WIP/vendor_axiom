@@ -194,6 +194,8 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 include vendor/axiom/config/version.mk
 
+$(call inherit-product, vendor/axiom/fonts/fonts.mk)
+
 -include vendor/axiom-priv/keys/keys.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
