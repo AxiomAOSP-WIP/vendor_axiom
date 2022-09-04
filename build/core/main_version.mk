@@ -4,22 +4,22 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
-# LineageOS System Version
+# AxiomOS System Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.version=$(LINEAGE_VERSION) \
-    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE) \
-    ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(LINEAGE_VERSION) \
-    ro.lineagelegal.url=https://lineageos.org/legal
+    ro.axiom.version=$(AXIOM_VERSION) \
+    ro.axiom.releasetype=$(AXIOM_BUILDTYPE) \
+    ro.axiom.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.modversion=$(AXIOM_VERSION) \
+    ro.axiomlegal.url=https://axiomos.pl/legal
 
-# LineageOS Platform Display Version
+# AxiomOS Platform Display Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION)
+    ro.axiom.display.version=$(AXIOM_DISPLAY_VERSION)
 
-# LineageOS Platform SDK Version
+# AxiomOS Platform SDK Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.build.version.plat.sdk=$(LINEAGE_PLATFORM_SDK_VERSION)
+    ro.axiom.build.version.plat.sdk=$(AXIOM_PLATFORM_SDK_VERSION)
 
-# LineageOS Platform Internal Version
+# AxiomOS Platform Internal Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.build.version.plat.rev=$(LINEAGE_PLATFORM_REV)
+    ro.axiom.build.version.plat.rev=$(AXIOM_PLATFORM_REV)
