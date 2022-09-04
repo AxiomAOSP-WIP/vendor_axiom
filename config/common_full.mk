@@ -16,3 +16,7 @@ PRODUCT_PACKAGES += \
 # Recorder
 PRODUCT_PACKAGES += \
     Recorder
+
+# AxiomThemesStub
+PRODUCT_PACKAGES += \
+	AxiomThemesStub
