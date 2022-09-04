@@ -1,2 +1,2 @@
 # Include AxiomOS versions
-include $(TOPDIR)vendor/axioms/build/core/main_version.mk
+include $(TOPDIR)vendor/axiom/build/core/main_version.mk

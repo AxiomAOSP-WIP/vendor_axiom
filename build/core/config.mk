@@ -1,6 +1,6 @@
 # Copyright (C) 2015 The CyanogenMod Project
 #           (C) 2017-2018 The LineageOS Project
-						(C) 2002 AxiomOS
+#						(C) 2002 AxiomOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
