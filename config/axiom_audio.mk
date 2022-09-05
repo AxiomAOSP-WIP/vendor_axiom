@@ -11,6 +11,7 @@ PRODUCT_COPY_FILES += \
     $(ALARM_PATH)/CyanAlarm.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/CyanAlarm.ogg \
     $(ALARM_PATH)/NuclearLaunch.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/NuclearLaunch.ogg
 
+
 # Notifications
 PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/CyanDoink.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/CyanDoink.ogg \
@@ -20,7 +21,16 @@ PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/Naughty.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Naughty.ogg \
     $(NOTIFICATION_PATH)/Pong.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Pong.ogg \
     $(NOTIFICATION_PATH)/Rang.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Rang.ogg \
-    $(NOTIFICATION_PATH)/Stone.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Stone.ogg
+    $(NOTIFICATION_PATH)/Stone.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Stone.ogg \
+		$(NOTIFICATION_PATH)/Axiom.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Axiom.ogg \
+    $(NOTIFICATION_PATH)/Birdsong.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Birdsong.ogg \
+    $(NOTIFICATION_PATH)/Chime.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Chime.ogg \
+    $(NOTIFICATION_PATH)/Hey.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Hey.ogg \
+		$(NOTIFICATION_PATH)/Strum.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Strum.ogg \
+		$(NOTIFICATION_PATH)/Clink.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Clink.ogg \
+		$(NOTIFICATION_PATH)/Flick.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Flick.ogg \
+		$(NOTIFICATION_PATH)/Note.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Note.ogg \
+		$(NOTIFICATION_PATH)/Trill.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/Trill.ogg
 
 # Ringtones
 PRODUCT_COPY_FILES += \
