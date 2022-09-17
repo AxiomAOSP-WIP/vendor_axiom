@@ -29,3 +29,5 @@ LOCAL_PREBUILT_MODULE_FILE := $(FINAL_APNS_FILE)
 LOCAL_PRODUCT_MODULE := true
 
 include $(BUILD_PREBUILT)
+
+include $(call all-makefiles-under,$(LOCAL_PATH))
