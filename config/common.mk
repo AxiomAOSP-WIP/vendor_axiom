@@ -204,6 +204,8 @@ $(call inherit-product, vendor/axiom/config/sepolicy.mk)
 # RRO
 include vendor/axiom/config/rro_overlays.mk
 
+# Apps and other PRODUCT_PACKAGES
+include vendor/axiom/config/packages.mk
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/axiom/build/target/product/security/axiom
