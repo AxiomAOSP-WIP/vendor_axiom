@@ -201,6 +201,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 $(call inherit-product, vendor/axiom/config/sepolicy.mk)
 
+# RRO
+include vendor/axiom/config/rro_overlays.mk
+
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/axiom/build/target/product/security/axiom
