@@ -17,7 +17,9 @@
 # AxiomoS PACKAGES
 PRODUCT_PACKAGES += \
     ViaBrowser \
-		AxiomPrivacyGuard
+    AxiomPrivacyGuard \
+    Etari \
+    SimpleDeviceConfig
 
 # Permissions for axiompricavy AxiomPrivacyGuard
 PRODUCT_COPY_FILES += \

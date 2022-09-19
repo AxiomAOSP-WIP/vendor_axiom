@@ -3,7 +3,7 @@ $(call inherit-product, vendor/axiom/config/common.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.alarm_alert=Hassium.ogg
+    ro.config.alarm_alert=Oxygen.ogg
 
 # Apps
 PRODUCT_PACKAGES += \
