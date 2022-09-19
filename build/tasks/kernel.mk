@@ -479,7 +479,7 @@ $(DTBO_OUT):
 $(BOARD_PREBUILT_DTBOIMAGE): $(DTC) $(MKDTIMG) $(MKDTBOIMG) $(DTBO_OUT)
 $(BOARD_PREBUILT_DTBOIMAGE):
 	@echo "Building dtbo.img"
-	rm -rf $(DTBO_OUT)
+	$(hide) find $(DTBO_OUT)/arch/$(KERNEL_ARCH)/boot/dts -type f -name "*.dtbo" | xargs rm -f
 	$(call make-dtbo-target,$(KERNEL_DEFCONFIG))
 	$(call make-dtbo-target,$(TARGET_KERNEL_DTB))
 ifeq ($(BOARD_KERNEL_SEPARATED_DTBO),true)
@@ -502,9 +502,7 @@ $(DTB_OUT):
 
 $(INSTALLED_DTBIMAGE_TARGET): $(DTC) $(DTB_OUT)
 	@echo "Building dtb.img"
-
-	rm -rf $(DTB_OUT)
->>>>>>> 004a3f2e3 (vendor: build: Wipe DTB/O OBJs before build)
+	$(hide) find $(DTB_OUT)/arch/$(KERNEL_ARCH)/boot/dts -type f -name "*.dtb" | xargs rm -f
 	$(call make-dtb-target,$(KERNEL_DEFCONFIG))
 	$(call make-dtb-target,$(TARGET_KERNEL_DTB))
 	cat $(shell find $(DTB_OUT)/arch/$(KERNEL_ARCH)/boot/dts -type f -name "*.dtb" | sort) > $@
