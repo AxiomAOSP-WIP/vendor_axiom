@@ -6,7 +6,7 @@ endif
 
 # AxiomOS System Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.axiom.version=$(AXIOM_VERSION) \
+    ro.axiom.version=$(RO_AXIOM_VERSION) \
     ro.axiom.releasetype=$(AXIOM_BUILDTYPE) \
     ro.axiom.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
 		ro.axiom.builddate=$(AXIOM_BUILD_DATE) \
