@@ -11,7 +11,6 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.axiom.releasetype=$(AXIOM_BUILDTYPE) \
     ro.axiom.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
 		ro.axiom.builddate=$(AXIOM_BUILD_DATE) \
-    ro.modversion=$(AXIOM_VERSION) \
     ro.axiomlegal.url=https://axiomos.pl/legal
 
 # AxiomOS Platform Display Version
