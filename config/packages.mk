@@ -18,8 +18,9 @@
 PRODUCT_PACKAGES += \
     ViaBrowser \
     AxiomPrivacyGuard \
-    Etari \
-    SimpleDeviceConfig
+    Etar \
+    SimpleDeviceConfig \
+		PdfViewer
 
 # Permissions for axiompricavy AxiomPrivacyGuard
 PRODUCT_COPY_FILES += \
