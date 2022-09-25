@@ -20,7 +20,8 @@ PRODUCT_PACKAGES += \
     AxiomPrivacyGuard \
     Etar \
     SimpleDeviceConfig \
-		PdfViewer
+		PdfViewer \
+		Updater
 
 # Permissions for axiompricavy AxiomPrivacyGuard
 PRODUCT_COPY_FILES += \
