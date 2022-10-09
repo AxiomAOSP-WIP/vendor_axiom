@@ -21,9 +21,7 @@ PRODUCT_PACKAGES += \
     Etar \
     SimpleDeviceConfig \
 		PdfViewer \
-		Updater \
-		SetupWizard
-
+		Updater 
 # Permissions for axiompricavy AxiomPrivacyGuard
 PRODUCT_COPY_FILES += \
 		vendor/axiom/prebuilt/common/apps/privapp_whitelist_com.axiomos.axiomprivacybeta.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp_whitelist_com.axiomos.axiomprivacybeta.xml
