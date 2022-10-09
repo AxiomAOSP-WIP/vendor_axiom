@@ -21,7 +21,12 @@ PRODUCT_PACKAGES += \
     Etar \
     SimpleDeviceConfig \
 		PdfViewer \
-		Updater 
+		Updater
+
+# Themes
+PRODUCT_PACKAGES += \
+		AndroidBlackThemeOverlay
+
 # Permissions for axiompricavy AxiomPrivacyGuard
 PRODUCT_COPY_FILES += \
 		vendor/axiom/prebuilt/common/apps/privapp_whitelist_com.axiomos.axiomprivacybeta.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp_whitelist_com.axiomos.axiomprivacybeta.xml
