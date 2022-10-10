@@ -1044,8 +1044,8 @@ function push_update(){(
     version="1.1"
     buildtype="RC1"
     size=$(stat -c%s "$zipname")
-    md5=$(md5sum "$zipname")
-    sha=$(sha256sum "$zipname")
+    md5=$(md5sum "$zipname" | cut -d' ' -f1)
+    sha=$(sha256sum "$zipname" | cut -d' ' -f1)
     zip_name=`basename "$zipname"`
 
     python3 $(pwd)/vendor/axiom/build/tools/create_json.py $target_device $zip_name $size $md5 $sha

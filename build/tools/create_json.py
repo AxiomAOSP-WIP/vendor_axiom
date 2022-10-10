@@ -16,15 +16,16 @@ date = datetime.datetime.utcnow()
 utc_time = calendar.timegm(date.utctimetuple())
 
 maintainer = str(input("Enter maintainer name: "))
-telegram = str(input("Enter telegram url: "))
+telegram = str(input("Enter telegram url (leave for default): "))
 
-
+if not telegram:
+	telegram = "https://t.me/axiomoshub"
 
 dictionary ={
     "response": [
         {
         "maintainer": maintainer,
-        "oem": "Xiaomi",
+        "oem": "OEM",
         "device": device,
         "filename": zipvar,
         "download": "https://sourceforge.net/projects/axiomos/files/Releases/" + device + "/" + zipvar + "/download",
