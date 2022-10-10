@@ -957,3 +957,96 @@ function fixup_common_out_dir() {
 # Override host metadata to make builds more reproducible and avoid leaking info
 export BUILD_USERNAME=ojszymon
 export BUILD_HOSTNAME=axiombuild
+
+
+function push_update(){(
+#variables
+    set -e
+    a=()
+    repopath="$(pwd)"
+    ota_dir=$(pwd)/ota
+    ota_scripts=$(pwd)/ota_scripts
+    out_dir_base=$(pwd)/out/target/product
+    echo -e "\n-------------------------------------------"
+    echo -e "AxiomOS OTA Push Scripts"
+    echo -e "-------------------------------------------\n"
+    read -p ':: Pleas give me your SF Username: ' uservar
+    echo -e "Hello $uservar ;-)\n"
+    echo -e "\n WARNING! First pleae check if catalog for your device exists on the AxiomOS SF"
+    echo -e ":: We try to detect your device..."
+
+    for devicename in $(ls $out_dir_base)
+    do
+        echo -n "Is $devicename your device codename? (y/n) "
+        read device_choice
+        case $device_choice in
+            y | Y)
+                target_device=$devicename
+                break
+                ;;
+            n | N)
+                # do nothing
+                ;;
+            *)
+                echo "Try again."
+                return 0
+                ;;
+        esac
+    done
+    if [ "$target_device" == "" ]; then
+        echo "Please run script again and select a device."
+        return 0
+    fi
+    echo -e ":: Your device is $target_device ;-)"
+
+    out_dir=$(pwd)/out/target/product/$target_device
+    	for zipfile in $(ls -tr $out_dir/axiom-1*.zip )
+    	do
+			echo -n "Is $zipfile your zip file? (y/n) "
+			read zipname_choice
+			case $zipname_choice in
+				y | Y)
+					zipname=$zipfile
+					break
+					;;
+				n | N)
+					# do nothing
+					;;
+				*)
+					echo "Try again."
+					return 0
+					;;
+			esac
+		done
+
+	if [ "$zipname" == "" ]; then
+		echo "We dont found any zip file or you need to run script again and select a zip file."
+		return 0
+	fi
+    echo -e ":: Your selected AxiomOS zip to upload is: $zipname"
+    sleep 1
+
+    echo -e "\nNow is time to upload your zip to our SF..."
+    echo -e "You will be prompted for a password in a moment. You must have write access to AxiomOS SourceForge..."
+    sleep 1
+    echo -e ":: Uploading..."
+    #TODO PATH
+    scp $zipname ${uservar}@frs.sourceforge.net:/home/frs/project/axiomos/Releases/$target_device/
+
+    echo -e "\n"
+    read -p ':: Was the file sent correctly? y/n ' uploaded_status
+    if [ "$uploaded_status" == "n" ]; then
+        echo "Please run script again and try again...Bye"
+        return 0
+    fi
+    echo -e "\n:: Time to generate json file with update..."
+
+    version="1.1"
+    buildtype="RC1"
+    size=$(stat -c%s "$zipname")
+    md5=$(md5sum "$zipname")
+    sha=$(sha256sum "$zipname")
+    zip_name=`basename "$zipname"`
+
+    python3 $(pwd)/vendor/axiom/build/tools/create_json.py $target_device $zip_name $size $md5 $sha
+  )}
