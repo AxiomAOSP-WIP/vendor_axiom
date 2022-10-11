@@ -973,6 +973,15 @@ function push_update(){(
     read -p ':: Pleas give me your SF Username: ' uservar
     echo -e "Hello $uservar ;-)\n"
     echo -e "\n WARNING! First pleae check if catalog for your device exists on the AxiomOS SF"
+    echo -e "\n------------------------------------------"
+    echo -e ":: Checking if you have GitHub Access... "
+    if ssh -q git@github.com; [ $? -eq 255 ]; then
+      echo -e "ERR: Check your SSHKeys access to github and try again !"
+      return 0
+    else
+      echo -e "::GitHub Access is OK we can upload changes...\n"
+    fi
+
     echo -e ":: We try to detect your device..."
 
     for devicename in $(ls $out_dir_base)
@@ -1049,4 +1058,23 @@ function push_update(){(
     zip_name=`basename "$zipname"`
 
     python3 $(pwd)/vendor/axiom/build/tools/create_json.py $target_device $zip_name $size $md5 $sha
+    echo -e "::You should find generated file in your rom home dir [$target_device.json]"
+
+    read -p ':: Do you have rights to access AxiomOS Git OTA repository? y/n ' access_status
+    if [ "$access_status" == "n" ]; then
+        echo "Please make sure that you have rights to github via sshkeys and try again...Bye"
+        return 0
+    fi
+    echo -e ":: Uploading update json details for $target_device to Axiom OTA repository..."
+    date_update=`date +%m-%d-%Y`
+    git clone git@github.com:AxiomAOSP-WIP/OTA.git
+    cp -r $target_device.json OTA/
+    cd $(pwd)/OTA
+    git add $target_device.json  && git commit -m "Update $target_device - $date_update"
+    git push
+    croot
+    rm -rf OTA
+    echo -e "::Uploaded should be fine check https://github.com/AxiomAOSP-WIP/OTA"
+    echo -e "\n Thanks ;)"
+
   )}
