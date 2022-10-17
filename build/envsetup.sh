@@ -980,7 +980,7 @@ function push_update(){(
     #  return 0
     #else
     #  echo -e "::GitHub Access is OK we can upload changes...\n"
-    #fi
+    # fi
 
     echo -e ":: We try to detect your device..."
 
@@ -1040,7 +1040,7 @@ function push_update(){(
     sleep 1
     echo -e ":: Uploading..."
     #TODO PATH
-    scp $zipname ${uservar}@frs.sourceforge.net:/home/frs/project/axiomos/Releases/$target_device/
+    scp $zipname ${uservar}@frs.sourceforge.net:/home/frs/project/axiomos/Releases/$target_device
 
     echo -e "\n"
     read -p ':: Was the file sent correctly? y/n ' uploaded_status
