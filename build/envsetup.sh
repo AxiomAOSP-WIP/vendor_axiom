@@ -975,12 +975,12 @@ function push_update(){(
     echo -e "\n WARNING! First pleae check if catalog for your device exists on the AxiomOS SF"
     echo -e "\n------------------------------------------"
     echo -e ":: Checking if you have GitHub Access... "
-    if ssh -q git@github.com; [ $? -eq 255 ]; then
-      echo -e "ERR: Check your SSHKeys access to github and try again !"
-      return 0
-    else
-      echo -e "::GitHub Access is OK we can upload changes...\n"
-    fi
+    #if ssh -q git@github.com; [ $? -eq 255 ]; then
+    #  echo -e "ERR: Check your SSHKeys access to github and try again !"
+    #  return 0
+    #else
+    #  echo -e "::GitHub Access is OK we can upload changes...\n"
+    #fi
 
     echo -e ":: We try to detect your device..."
 
