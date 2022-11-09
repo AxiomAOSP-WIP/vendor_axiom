@@ -20,8 +20,9 @@ PRODUCT_PACKAGES += \
     AxiomPrivacyGuard \
     Etar \
     SimpleDeviceConfig \
-		PdfViewer \
-		Updater
+    PdfViewer \
+    Updater \
+    Aperture
 
 # Themes
 PRODUCT_PACKAGES += \
